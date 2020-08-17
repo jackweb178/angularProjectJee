@@ -1,3 +1,5 @@
+import { AjoutUserService } from './../ajout-user.service';
+import { UserInscription } from './../modeles/UserInscription';
 import { LoginService } from './../login.service';
 
 import { CommonModule } from "@angular/common";
