@@ -1,3 +1,5 @@
+import { UserService } from './../user.service';
+import { UserData } from './../modeles/UserData';
 import { Router } from '@angular/router';
 import { LoginService } from './../login.service';
 import { LoginData } from './../modeles/LoginData';
@@ -13,8 +15,10 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   data:LoginData;
-  constructor(private loginService: LoginService ,  private router: Router) {
+  dataUser:UserData;
+  constructor(private loginService: LoginService , private userService: UserService ,  private router: Router) {
     this.data= new LoginData('','');
+    this.dataUser = new UserData(null,'','',null,'','',null);
   }
 
   onConnectionSubmit(){
@@ -25,7 +29,7 @@ export class LoginComponent implements OnInit {
       this.loginService.saveToken(rest);
 
       //tester le role du user et le rediriger vers sa page respective
-      if(rest.authorities[0].authority=='ROLE_USER')
+      if(rest.authorities[0].authority=='ROLE_ADMIN')
       {
         this.router.navigate(['/user']);
       }
@@ -36,9 +40,18 @@ export class LoginComponent implements OnInit {
     },
     err => console.log(err)
     )
+
+    /*this.userService.getUser()
+    .subscribe(rest=>{
+      console.log(rest);
+      :/this.loginService.saveToken(rest);
+    },
+    err => console.log(err)
+    )*/
   }
 
   ngOnInit(): void {
   }
+  
 
 }

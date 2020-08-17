@@ -1,1 +1,31 @@
-<p>page-user works!</p>
+<br>
+<br>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Liste des users</div>
+  
+    <!-- Table -->
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nom</th>
+              <th scope="col">User Name</th>
+              <th scope="col">Matricule</th>
+              <th scope="col">Telephone</th>
+              <th scope="col">Email</th>
+              <th scope="col">Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of data">
+              <th scope="row">{{c.id}}</th>
+              <td>{{c.name}}</td>
+              <td>{{c.username}}</td>
+              <td>{{c.matricule}}</td>
+              <td>{{c.tel}}</td>
+              <td>{{c.email}}</td>
+              <td>{{c.role.name}}</td>
+            </tr>
+        </tbody>
+    </table>

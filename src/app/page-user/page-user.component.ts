@@ -1,4 +1,9 @@
+import { LoginService } from './../login.service';
+
+import { CommonModule } from "@angular/common";
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
+import { UserData } from '../modeles/UserData';
 
 @Component({
   selector: 'app-page-user',
@@ -7,9 +12,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageUserComponent implements OnInit {
 
-  constructor() { }
+  data: UserData[];
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+
+    this.getUser();
+  }
+
+  getUser() {
+    this.userService.getUser()
+    .subscribe(rest=>{
+      console.log(rest);
+      this.data=rest;
+      //this.loginService.saveToken(rest);
+    },
+    err => console.log(err)
+    )
   }
 
 }

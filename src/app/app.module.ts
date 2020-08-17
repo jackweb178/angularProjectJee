@@ -2,6 +2,7 @@ import { TokenInterceptorServiceService } from './token-interceptor-service.serv
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { CommonModule } from "@angular/common";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -12,21 +13,26 @@ import { NewsLetterComponent } from './news-letter/news-letter.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorComponent } from './token-interceptor/token-interceptor.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { PageUserComponent } from './page-user/page-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    PageUserComponent,
     NavBarComponent,
     FooterComponent,
     HomeComponent,
     NewsLetterComponent,
-    TokenInterceptorComponent
+    TokenInterceptorComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    CommonModule,
     HttpClientModule
   ],
   providers: [{
