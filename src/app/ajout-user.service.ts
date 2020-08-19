@@ -11,8 +11,8 @@ export class AjoutUserService {
 
   /**
    * LoginRequest
-   */
+   
   public AjoutRequest(user: any) {
     return this.http.post<any>(this.apiService+"/add", user);
-  }
+  }*/
 }

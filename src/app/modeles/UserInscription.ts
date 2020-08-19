@@ -1,3 +1,4 @@
+import { RoleData } from './RoleData';
 export class UserInscription{
 
     constructor (
@@ -7,7 +8,7 @@ export class UserInscription{
         public tel:BigInteger,
         public email:string,
         public matricule:string,
-        public role:BigInteger
+        //public role:RoleData
     ){
 
     }

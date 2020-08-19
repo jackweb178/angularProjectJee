@@ -15,4 +15,8 @@ export class UserService {
   public getUser() {
     return this.http.get<any>(this.apiService+"/all");
   }
+
+  public AjoutRequest(user: any) {
+    return this.http.post<any>(this.apiService+"/add", user);
+  }
 }

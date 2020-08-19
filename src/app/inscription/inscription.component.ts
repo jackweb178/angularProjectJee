@@ -1,6 +1,9 @@
+import { UserService } from './../user.service';
+import { RoleServiceService } from './../role-service.service';
 import { UserInscription } from './../modeles/UserInscription';
 import { AjoutUserService } from './../ajout-user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { RoleData } from '../modeles/RoleData';
 
 @Component({
   selector: 'app-inscription',
@@ -9,19 +12,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InscriptionComponent implements OnInit {
 
-  
+  //@Input() public inscriptionUser;
   inscriptionUser: UserInscription;
-  constructor(private ajoutUserService:AjoutUserService) { 
-    this.inscriptionUser = new UserInscription('','','',null,'','',null);
+  roleData : RoleData;
+  constructor(private userService:UserService /*, private roleService : RoleServiceService*/) { 
+    this.inscriptionUser = new UserInscription('','','',null,'','');
   }
 
   ngOnInit(): void {
-    this.onIscriptionSubmit
+    this.onIscriptionSubmit();
+    /*this.roleService.getRole()
+    .subscribe(
+      res => { 
+        console.log(res);
+        this.roleData = res;
+      },
+      err => console.log(err)
+    );*/
   }
 
   onIscriptionSubmit(){
     console.log(this.inscriptionUser);
-    this.ajoutUserService.AjoutRequest(this.inscriptionUser)
+    this.userService.AjoutRequest(this.inscriptionUser)
     .subscribe(rest=>{
       console.log(rest);
       this.inscriptionUser= rest;
