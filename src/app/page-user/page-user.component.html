@@ -2,10 +2,10 @@
 <br>
 
 <div class="panel panel-default">
-  <app-inscription></app-inscription>
+  <button (click)="openModalUser()" class='btn btn-info'>inscription</button>
     <!-- Default panel contents -->
     <div class="panel-heading">Liste des users</div>
-  
+
     <!-- Table -->
     <table class="table">
         <thead>
@@ -17,6 +17,7 @@
               <th scope="col">Telephone</th>
               <th scope="col">Email</th>
               <th scope="col">Role</th>
+              <th scope="col">Editer</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,7 @@
               <td>{{c.tel}}</td>
               <td>{{c.email}}</td>
               <td>{{c.role.name}}</td>
+              <td><button (click)="openModal(c)" class='btn btn-info'>Update</button></td>
             </tr>
         </tbody>
     </table>

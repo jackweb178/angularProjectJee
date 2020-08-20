@@ -8,7 +8,7 @@ export class UserInscription{
         public tel:BigInteger,
         public email:string,
         public matricule:string,
-        //public role:RoleData
+        public role:RoleData
     ){
 
     }

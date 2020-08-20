@@ -19,4 +19,8 @@ export class UserService {
   public AjoutRequest(user: any) {
     return this.http.post<any>(this.apiService+"/add", user);
   }
+
+  public updateUser(user: any) {
+    return this.http.post<any>(this.apiService+"/update", user);
+  }
 }

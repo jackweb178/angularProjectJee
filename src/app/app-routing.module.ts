@@ -1,3 +1,4 @@
+import { ProduitComponent } from './produit/produit.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
@@ -27,6 +28,11 @@ const routes: Routes = [
   {
     path:'inscription',
     component: InscriptionComponent
+  },
+
+  {
+    path:'produit',
+    component: ProduitComponent
   },
 
   {

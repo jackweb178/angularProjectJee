@@ -15,6 +15,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorComponent } from './token-interceptor/token-interceptor.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { PageUserComponent } from './page-user/page-user.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalEditUserComponent } from './modal-edit-user/modal-edit-user.component';
+import { ProduitComponent } from './produit/produit.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +29,17 @@ import { PageUserComponent } from './page-user/page-user.component';
     HomeComponent,
     NewsLetterComponent,
     TokenInterceptorComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ModalEditUserComponent,
+    ProduitComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

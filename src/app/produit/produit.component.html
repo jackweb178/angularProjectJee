@@ -1,0 +1,30 @@
+<br>
+<br>
+
+<div class="panel panel-default">
+  <!--<button (click)="#" class='btn btn-info'>Ajouter un nouveau produit</button>
+     Default panel contents -->
+    <div class="panel-heading">Liste des users</div>
+
+    <!-- Table -->
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Produit</th>
+              <th scope="col">Reference</th>
+              <th scope="col">Prix Normal</th>
+              <th scope="col">Prix Minimal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of produit">
+              <th scope="row">{{p.id}}</th>
+              <td>{{p.nomProduit}}</td>
+              <td>{{p.refProduit}}</td>
+              <td>{{p.prixNormal}}</td>
+              <td>{{p.prixMinimum}}</td>
+              <!--<td><button (click)="openModal(c)" class='btn btn-info'>Update</button></td>-->
+            </tr>
+        </tbody>
+    </table>
